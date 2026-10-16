@@ -1,0 +1,220 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;600;700;800&subset=latin-ext&display=swap" rel="stylesheet">
+<style>
+/* ✏️ COLORES: cambiá estos códigos por los de tu marca (oscuro, acento, botón, descuento, texto, bordes y fondos) */
+.hbp{--hbp-dark:#0B2A3C;--hbp-accent:#0A7F86;--hbp-accent-dark:#075E64;--hbp-accent-soft:#E3F6F6;--hbp-btn:#2EC4C0;--hbp-btn-dark:#0A7F86;--hbp-hot:#0FA3A8;--hbp-ink:#0B2A3C;--hbp-ink-soft:#4A6B78;--hbp-border:#CDEBEA;--hbp-bg:#FFFFFF;--hbp-bg-alt:#EEF9F9;
+  font-family:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--hbp-ink);background:var(--hbp-bg);line-height:1.5;max-width:520px;margin:0 auto;padding:0 0 28px;text-align:left;-webkit-font-smoothing:antialiased}
+.hbp *{box-sizing:border-box}
+.hbp h1,.hbp h2,.hbp h3{font-family:'Barlow Condensed','Barlow',sans-serif;color:var(--hbp-ink);margin:0;line-height:1.12;font-weight:800;letter-spacing:0}
+.hbp p{margin:0}
+.hbp img{display:block;max-width:100%;height:auto}
+.hbp .hbp-ok{display:block;background:var(--hbp-accent-soft);color:var(--hbp-accent-dark);font-weight:800;font-size:13px;padding:10px 16px;text-align:center}
+/* ✏️ Lo que va antes del nombre del comprador y del ahorro. Si hablás de tú: "Ahorras " */
+.hbp .hbp-name::before{content:", "}
+.hbp .hbp-name:empty{display:none}
+.hbp .hbp-top{padding:22px 20px 0;text-align:center}
+.hbp .hbp-pill{display:inline-block;background:var(--hbp-dark);color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;padding:6px 14px;border-radius:100px}
+.hbp .hbp-top h1{font-size:31px;margin:14px 0 10px}
+.hbp .hbp-top h1 em{font-style:normal;color:var(--hbp-accent-dark)}
+.hbp .hbp-sub{font-size:15.5px;color:var(--hbp-ink-soft)}
+.hbp .hbp-card{margin:20px 16px 0;background:#fff;border:1px solid var(--hbp-border);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px rgba(11,42,60,.14)}
+.hbp .hbp-visual{position:relative;background:var(--hbp-bg-alt);padding:14px}
+.hbp .hbp-visual img{width:100%;border-radius:14px}
+.hbp .hbp-disc{display:inline-block;align-self:center;background:var(--hbp-hot);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;line-height:1;padding:6px 9px;border-radius:8px;transform:rotate(-3deg)}
+.hbp .hbp-disc::after{content:" taniej"}
+.hbp .hbp-disc:empty{display:none}
+.hbp .hbp-body{padding:18px 20px 22px}
+.hbp .hbp-body h2{font-size:24px;margin-bottom:12px}
+.hbp .hbp-list{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:9px}
+.hbp .hbp-list li{display:grid;grid-template-columns:24px 1fr;gap:8px;font-size:15px;line-height:1.4}
+.hbp .hbp-list li::before{content:"✓";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--hbp-accent-soft);color:var(--hbp-accent-dark);font-weight:800;font-size:13px}
+.hbp .hbp-why{background:var(--hbp-bg-alt);border:1px dashed var(--hbp-border);border-radius:14px;padding:12px 14px;font-size:14px;margin:0 0 16px;color:var(--hbp-ink-soft)}
+.hbp .hbp-why b{color:var(--hbp-ink)}
+.hbp .hbp-price{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap}
+.hbp .hbp-old{font-size:17px;color:#9CCFCD;text-decoration:line-through}
+.hbp .hbp-old:empty{display:none}
+.hbp .hbp-now{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:44px;color:var(--hbp-ink);line-height:1}
+.hbp .hbp-save{display:block;text-align:center;font-weight:800;font-size:13.5px;color:var(--hbp-accent-dark);margin-top:6px}
+.hbp .hbp-save::before{content:"Oszczędzasz "}
+.hbp .hbp-save:empty{display:none}
+.hbp .hbp-btn{display:flex;align-items:center;justify-content:center;width:100%;margin:16px 0 0;padding:16px;border:0;border-radius:14px;background:var(--hbp-btn);color:#082232;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:21px;line-height:1.15;text-decoration:none;text-align:center;cursor:pointer;box-shadow:0 6px 0 var(--hbp-btn-dark);transition:transform .12s ease,box-shadow .12s ease}
+.hbp .hbp-btn:active{transform:translateY(3px);box-shadow:0 3px 0 var(--hbp-btn-dark)}
+.hbp .hbp-btn span{display:block}
+.hbp .hbp-btn small{display:block;margin-top:3px;font-family:'Barlow',sans-serif;font-weight:700;font-size:12.5px;opacity:.7}
+.hbp .hbp-timer{display:flex;justify-content:center;align-items:center;gap:8px;margin:16px 0 0;font-size:13.5px;color:var(--hbp-ink-soft)}
+.hbp .hbp-timer b{font-family:'Barlow Condensed',sans-serif;font-size:17px;color:var(--hbp-hot);background:#DDF5F4;padding:2px 10px;border-radius:8px;font-variant-numeric:tabular-nums}
+.hbp .hbp-sec{margin:28px 16px 0}
+.hbp .hbp-sec h3{font-size:22px;text-align:center;margin-bottom:12px}
+.hbp .hbp-uses{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.hbp .hbp-use{background:#fff;border:1px solid var(--hbp-border);border-radius:14px;padding:12px 8px;text-align:center;font-size:12.5px;font-weight:700;line-height:1.3}
+.hbp .hbp-use i{display:block;font-style:normal;font-size:24px;margin-bottom:4px}
+.hbp .hbp-duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hbp .hbp-duo div{background:var(--hbp-bg-alt);border:1px solid var(--hbp-border);border-radius:14px;padding:14px 12px;text-align:center;font-size:13.5px;line-height:1.35}
+.hbp .hbp-duo div.is-new{background:var(--hbp-accent-soft);border-color:#BFE9E7}
+.hbp .hbp-duo i{display:block;font-style:normal;font-size:26px;margin-bottom:4px}
+.hbp .hbp-duo b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:16px;margin-bottom:2px}
+.hbp .hbp-cap{text-align:center;font-size:13.5px;color:var(--hbp-ink-soft);margin-top:10px}
+.hbp .hbp-steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:hbp}
+.hbp .hbp-steps li{counter-increment:hbp;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;background:#fff;border:1px solid var(--hbp-border);border-radius:14px;padding:10px 12px;font-size:14.5px;font-weight:700}
+.hbp .hbp-steps li::before{content:counter(hbp);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--hbp-dark);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:16px}
+.hbp .hbp-vs{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--hbp-border);border-radius:14px;overflow:hidden;font-size:13.5px;line-height:1.35}
+.hbp .hbp-vs th,.hbp .hbp-vs td{padding:10px 11px;text-align:left;vertical-align:top;border-top:1px solid var(--hbp-border)}
+.hbp .hbp-vs thead th{border-top:0;font-family:'Barlow Condensed',sans-serif;font-size:14px;background:var(--hbp-bg-alt)}
+.hbp .hbp-vs tbody th{font-weight:800;font-size:12.5px;color:var(--hbp-ink-soft)}
+.hbp .hbp-vs td:last-child,.hbp .hbp-vs th:last-child{background:var(--hbp-accent-soft);color:var(--hbp-accent-dark);font-weight:700}
+.hbp .hbp-end{margin:28px 16px 0;background:var(--hbp-dark);border-radius:20px;padding:24px 20px 18px;color:#fff;text-align:center}
+.hbp .hbp-end h3{color:#fff;font-size:25px;margin-bottom:8px}
+.hbp .hbp-end p{color:#D2ECEB;font-size:14.5px;margin-bottom:14px}
+.hbp .hbp-end .hbp-now{color:#fff}
+.hbp .hbp-end .hbp-old{color:#8BBFBE}
+.hbp .hbp-no{display:block;width:100%;margin:16px 0 0;padding:10px;background:none;border:0;color:#B5DEDC;font-family:'Barlow',sans-serif;font-size:13.5px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.hbp .hbp-trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:18px 16px 0;font-size:12px;color:var(--hbp-ink-soft);font-weight:700}
+@media (min-width:600px){.hbp .hbp-top h1{font-size:37px}}
+</style>
+<style>
+.pps-wrap{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:28px 20px 20px;background:rgba(4,20,28,.74);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.pps-wrap.pps-on{display:flex}
+.pps-box{position:relative;max-width:380px;width:100%;background:linear-gradient(180deg,#0B2A3C,#061823);border:1px solid rgba(46,196,192,.35);border-radius:20px;padding:42px 22px 18px;text-align:center;color:#E6F6F6;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 30px 70px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06);animation:pps-in .28s cubic-bezier(.2,.9,.3,1.15)}
+@keyframes pps-in{from{transform:translateY(14px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.pps-ico{position:absolute;left:50%;top:-30px;width:60px;height:60px;margin-left:-30px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E0F8F6,#2EC4C0 55%,#0A7F86);font-size:28px;line-height:1;box-shadow:0 0 0 6px #082232,0 12px 30px -6px rgba(10,127,134,.75)}
+.pps-ok{display:inline-flex;align-items:center;gap:6px;margin:0 0 12px;padding:6px 12px;border-radius:999px;background:rgba(94,224,176,.12);border:1px solid rgba(94,224,176,.38);color:#7FF0C4;font-size:13px;font-weight:700;letter-spacing:.01em}
+.pps-box h3{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:600;font-size:27px;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;margin:0 0 10px;color:#BDEFEC}
+.pps-box p{margin:0 0 18px;font-size:15px;line-height:1.5;color:#D2ECEB}
+.pps-box p strong{color:#7FE6E2;font-weight:700}
+.pps-si{display:block;width:100%;padding:15px;border:0;border-radius:12px;background:linear-gradient(135deg,#085A60 0%,#5FCFCB 22%,#D4F4F2 42%,#3FB8B4 60%,#0A6C72 80%,#9FE0DD 100%);color:#071C29;font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 12px 26px -10px rgba(46,196,192,.65)}
+.pps-si:focus-visible,.pps-no:focus-visible{outline:2px solid #7FE6E2;outline-offset:3px}
+.pps-no{display:block;width:100%;margin-top:8px;padding:10px;border:0;background:none;color:#8BBFBE;font-family:'DM Sans',sans-serif;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media (max-width:599px){
+.pps-wrap{align-items:flex-end;padding:40px 0 0}
+.pps-box{max-width:none;border-radius:22px 22px 0 0;border-bottom:0;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px));animation:pps-sube .3s cubic-bezier(.2,.9,.3,1)}
+}
+@keyframes pps-sube{from{transform:translateY(100%)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.pps-box{animation:none}}
+.hbp .hbp-bajada .hbp-body p.hbp-same{font-size:15px;margin:0 0 14px;color:var(--hbp-ink-soft)}
+.hbp .hbp-card .hbp-no{color:var(--hbp-ink-soft)}
+.hbp{--hbp-btn:#1FA855;--hbp-btn-dark:#137A3B}
+.hbp .hbp-btn{color:#fff}
+.hbp .hbp-btn small{opacity:.9}
+.hbp .hbp-dps{display:grid;gap:10px;margin-top:22px}
+.hbp .hbp-dps div{border-radius:14px;padding:14px;font-size:14.5px;line-height:1.42;background:var(--hbp-bg-alt);border:1px solid var(--hbp-border);color:var(--hbp-ink)}
+.hbp .hbp-dps b{display:block;font-family:'Barlow Condensed','Barlow',sans-serif;font-size:17px;margin-bottom:3px}
+.hbp .hbp-dps .is-pain{background:#E3F6F6;border-color:#BFE9E7}
+.hbp .hbp-dps .is-fix{background:#E8F6EC;border-color:#BFE3CB}
+.hbp .hbp-cost{margin:12px 16px 0;text-align:center;font-weight:700;font-size:15.5px;line-height:1.35;color:var(--hbp-accent-dark)}
+</style>
+<div class="hbp">
+  <div class="hbp-ok">⭐ Ostatnia oferta</div>
+
+  <div class="hbp-top">
+    <span class="hbp-pill">⭐ Tak zostaje się ekspertką w okolicy</span>
+    <h1>Każdym rodzicom tłumaczysz to samo. <em>A gdybyś wytłumaczyła to raz dwudziestu rodzinom?</em></h1>
+    <p class="hbp-sub">Najwięcej dzieci mają nie te, które najwięcej wiedzą, tylko te, o których się wie.</p>
+  </div>
+
+  <div class="hbp-card">
+    <div class="hbp-visual"><img src="{product-image}" alt="Zestaw 4 warsztatów dla rodziców"></div>
+    <div class="hbp-body">
+      <h2>Zestaw 4 warsztatów dla rodziców</h2>
+      <ul class="hbp-list">
+        <li>4 warsztaty po 75 minut ze scenariuszem minuta po minucie 🎤</li>
+        <li>Lekcje bez kłótni, czytanie w domu, ekrany i emocje 🏠</li>
+        <li>Ćwiczenia i karty dla rodziców do zabrania 📄</li>
+        <li>Jak to zorganizować, wycenić i wypromować 📣</li>
+      </ul>
+      <p class="hbp-why"><b>Skąd taka cena?</b> Bo zwraca się z jednego warsztatu. I tylko na tym ekranie.</p>
+      <div class="hbp-price"><span class="hbp-disc">{discount}</span><span class="hbp-old">{compare}</span><span class="hbp-now">{price}</span></div>
+      <span class="hbp-save">{savings}</span>
+      <a href="#" class="hbp-btn" data-pp-accept><span>TAK, DODAJ WARSZTATY →<small>Jedno kliknięcie i dołącza do tego samego pobrania</small></span></a>
+      <p class="hbp-timer">Cena zarezerwowana jeszcze przez <b>{timer}</b></p>
+    </div>
+  </div>
+
+  <div class="hbp-sec hbp-dps">
+    <div class="is-pain"><b>😣 Znasz to?</b>Na każdym omówieniu powtarzasz to samo o lekcjach, ekranach i czytaniu w domu.</div>
+    <div><b>⚠️ Prawdziwy problem</b>To czas, za który nie dostajesz pieniędzy, a rodziny z okolicy, które Cię nie znają, nigdy tego nie usłyszą.</div>
+    <div class="is-fix"><b>✅ Rozwiązanie</b>4 gotowe warsztaty ze scenariuszem i materiałami: mówisz raz do 20 rodzin i dajesz się poznać.</div>
+  </div>
+
+  <div class="hbp-sec">
+    <h3>Kiedy się przyda</h3>
+    <div class="hbp-uses">
+      <div class="hbp-use"><i>🏠</i>W Twoim gabinecie</div>
+      <div class="hbp-use"><i>🏫</i>W szkole</div>
+      <div class="hbp-use"><i>💻</i>Online</div>
+    </div>
+  </div>
+
+  <div class="hbp-sec">
+    <h3>Co już masz, a czego Ci brakuje</h3>
+    <div class="hbp-duo">
+      <div><i>🧑‍🏫</i><b>Masz już</b>Narzędzia do pracy z jednym dzieckiem</div>
+      <div class="is-new"><i>👨‍👩‍👧</i><b>Brakuje Ci</b>Sposób, by dotrzeć do 20 rodzin naraz</div>
+    </div>
+    <p class="hbp-cap">Warsztat przedstawia Cię dwudziestu rodzinom. A niektóre wracają z dzieckiem na zajęcia.</p>
+  </div>
+
+  <div class="hbp-end">
+    <h3>Ekspertka w Twojej okolicy</h3>
+    <p>Cztery warsztaty gotowe do poprowadzenia jeszcze w tym miesiącu.</p>
+    <div class="hbp-price"><span class="hbp-old">{compare}</span><span class="hbp-now">{price}</span></div>
+    <a href="#" class="hbp-btn" data-pp-accept><span>TAK, CHCĘ TO →<small>Dołącza do zamówienia jednym kliknięciem</small></span></a>
+    <button type="button" class="hbp-no" data-pp-decline>Nie, dziękuję. Kończę zamówienie</button>
+  </div>
+
+  <p class="hbp-trust"><span>🔒 100% bezpieczna płatność</span><span>📩 Dostęp od razu</span><span>📖 Format PDF</span></p>
+</div>
+
+<div class="pps-wrap" id="pps" role="dialog" aria-modal="true" aria-labelledby="pps-t" aria-describedby="pps-d">
+  <div class="pps-box">
+    <span class="pps-ico" aria-hidden="true">🎁</span>
+    <span class="pps-ok">✓ Twój zakup jest już potwierdzony</span>
+    <h3 id="pps-t">Zaczekaj!</h3>
+    <p id="pps-d">Jeśli wyjdziesz teraz, ten ekran się zamknie i <strong>ta oferta już się nie pojawi</strong>. Przejdź do końca, żeby dostać swoje materiały.</p>
+    <button type="button" class="pps-si" data-pps="seguir">Zostaję</button>
+    <button type="button" class="pps-no" data-pps="salir">Mimo to wychodzę</button>
+  </div>
+</div>
+<script>
+(function () {
+  var cartel = document.getElementById('pps');
+  if (!cartel) return;
+  /* Estado global: si la plataforma cambia de oferta sin recargar, el cartel nuevo toma el control. */
+  var E = window.__pps || (window.__pps = { libre: false, trampa: false, listo: false });
+  E.cartel = cartel;
+  E.libre = false;
+  function abierto() { return !!(E.cartel && E.cartel.classList.contains('pps-on')); }
+  function abrir() {
+    if (E.libre || !E.cartel || !document.body.contains(E.cartel)) return;
+    E.cartel.classList.add('pps-on');
+    var b = E.cartel.querySelector('[data-pps="seguir"]'); if (b) b.focus();
+  }
+  function cerrar() { if (E.cartel) E.cartel.classList.remove('pps-on'); }
+  /* Entrada extra en el historial para atajar el «atrás». Chrome solo la respeta después de un gesto. */
+  function armar() {
+    if (E.trampa || E.libre || abierto()) return;
+    try { history.pushState({ pps: 1 }, '', location.href); E.trampa = true; } catch (e) {}
+  }
+  E.armar = armar;
+  cartel.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('[data-pps]') : null;
+    if (!b) { if (e.target === cartel) { cerrar(); armar(); } return; }
+    if (b.getAttribute('data-pps') === 'seguir') { cerrar(); armar(); }
+    else { E.libre = true; cerrar(); history.back(); }
+  });
+  if (E.listo) return;
+  E.listo = true;
+  ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
+    document.addEventListener(ev, function () { if (E.armar) E.armar(); }, { passive: true, capture: true });
+  });
+  window.addEventListener('popstate', function () { if (E.libre) return; E.trampa = false; abrir(); });
+  window.addEventListener('beforeunload', function (e) { if (E.libre) return; e.preventDefault(); e.returnValue = ''; });
+  /* Aceptar, rechazar, un link real o un formulario: es el camino del funnel, nunca se frena. */
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('[data-pp-accept],[data-pp-decline],a[href]:not([href="#"]):not([href=""])') : null;
+    if (t && !(E.cartel && E.cartel.contains(t))) { E.libre = true; cerrar(); }
+  }, true);
+  document.addEventListener('submit', function () { E.libre = true; }, true);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && abierto()) { cerrar(); armar(); } });
+})();
+</script>
